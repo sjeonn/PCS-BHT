@@ -1,4 +1,5 @@
 import Listings from './Listings';
+import SideBar from './SideBar';
 
 const listing1 = {
   "id" : 1,
@@ -11,10 +12,29 @@ const listing1 = {
 
 const listings = [listing1, listing1, listing1, listing1, listing1, listing1]
 
+const items = [
+  { name: 'search', label: 'Search' },
+  { name: 'filter', label: 'Filter',
+    items: [
+    { name: 'bedrooms', label: 'Bedrooms' },
+    { name: 'location', label: 'Location', items: [{ name: 'southside', label: 'Southside' },
+    { name: 'northside', label: 'Northside' },],},
+    ],
+  },
+  {
+    name: 'sort',
+    label: 'Sort',
+    items: [
+      { name: 'cost', label: 'Cost' },
+    ],
+  },
+]
+
 function App() {
   return (
     <div className="App">
       <Listings listings={listings}/>
+      <SideBar items={items} />
     </div>
   );
 }
