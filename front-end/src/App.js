@@ -1,4 +1,5 @@
 import Listings from './Listings';
+import Navbar from './Navbar';
 
 const listing1 = {
   "id" : 1,
@@ -14,6 +15,7 @@ const listings = [listing1, listing1, listing1, listing1, listing1, listing1]
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Listings listings={listings}/>
     </div>
   );
