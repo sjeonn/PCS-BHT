@@ -97,7 +97,7 @@ venv.bak/
 *.sublime-workspace 
 *.sublime-project 
 
-# sftp configuration file 
+# sftp configuration file :w
 sftp-config.json 
 
 # Package control specific files Package 
@@ -116,3 +116,7 @@ GitHub.sublime-settings
 .history
 Scripts/
 backend/pyvenv.cfg
+**/node_modules
+
+# API Keys
+backend/bhs_api-container/bhs_api/secrets.py
