@@ -1,4 +1,5 @@
 import Listings from './Listings';
+import Navbar from './Navbar'
 import SideBar from './SideBar';
 
 const listing1 = {
@@ -33,6 +34,7 @@ const items = [
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Listings listings={listings}/>
       <SideBar items={items} />
     </div>
