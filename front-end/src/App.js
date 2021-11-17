@@ -2,6 +2,8 @@ import Listings from './Listings';
 import Navbar from './Navbar'
 import SideBar from './SideBar';
 import './App.css';
+import React from 'react';
+import axios from 'axios';
 
 
 const listing1 = {
@@ -17,7 +19,6 @@ const listing1 = {
 const listings = [listing1, listing1, listing1, listing1, listing1, listing1]
 
 const items = [
-  { name: 'search', label: 'Search' },
   { name: 'filter', label: 'Filter',
     items: [
     { name: 'bedrooms', label: 'Bedrooms' },
@@ -33,6 +34,15 @@ const items = [
     ],
   },
 ]
+const test = [];
+axios.get('http://localhost:4000/listings')
+      .then(res => {
+          this.setState({ test: res.data });
+          console.log(res.data)
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
 
 function App() {
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
+import SearchBar from './SearchBar'
 import './SideBar.css';
 
 function SidebarItem({ label, items, depthStep = 10, depth = 0, ...rest }) {
@@ -31,6 +32,7 @@ function SidebarItem({ label, items, depthStep = 10, depth = 0, ...rest }) {
 function SideBar({ items, depthStep, depth }) {
   return (
     <div className="sidebar">
+      <SearchBar />
       <List disablePadding dense>
         {items.map((sidebarItem, index) => (
           <SidebarItem
