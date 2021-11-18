@@ -16,8 +16,8 @@ const listing1 = {
   "price" : 420
 }
 
-const listings = [listing1, listing1, listing1, listing1, listing1, listing1]
-
+//var listings = [listing1, listing1, listing1, listing1, listing1, listing1]
+var listings
 const items = [
   { name: 'filter', label: 'Filter',
     items: [
@@ -35,10 +35,11 @@ const items = [
   },
 ]
 const test = [];
-axios.get('http://localhost:4000/listings')
+axios.get('http://127.0.0.1:8000/api/listings/')
       .then(res => {
-          this.setState({ test: res.data });
+          //this.setState({ test: res.data });
           console.log(res.data)
+          listings = res.data
       })
       .catch(function (error) {
           console.log(error);
