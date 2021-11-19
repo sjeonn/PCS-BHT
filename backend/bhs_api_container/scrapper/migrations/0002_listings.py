@@ -4,13 +4,15 @@ from django.db import migrations
 from craigslist import CraigslistHousing
 
 
-def create_data(apps, schema_editor):
+def create_data(apps, schema_editor):        
+    print("I AM HERE")
     Listing = apps.get_model('scrapper', 'Listing')
     data = []
     cl_h = CraigslistHousing(site='sfbay', area='eby', category='apa',
                          filters={'zip_code': "94704", 'search_distance':"1", 'max_price': 1200, 'private_room': True})
                          
     for result in cl_h.get_results(sort_by='newest', geotagged=True):
+        print(result)
         Listing(link = result['url'], location = result['where'], description = result['name'], email = "", bedrooms = 2, bathrooms = 3, price = result['price'], photo = "", registrationDate = result['last_updated'])
         
 
