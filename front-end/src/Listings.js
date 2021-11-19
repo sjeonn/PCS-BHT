@@ -14,8 +14,7 @@ const listing1 = {
   "price" : 420
 }
 
-var listings = [listing1, listing1, listing1, listing1, listing1, listing1]
-//var listings
+///var listings = [listing1, listing1, listing1, listing1, listing1, listing1]
 const items = [
   { name: 'filter', label: 'Filter',
     items: [
@@ -32,6 +31,7 @@ const items = [
     ],
   },
 ]
+var listings
 const test = [];
 axios.get('http://127.0.0.1:8000/api/listings/')
       .then(res => {
@@ -43,7 +43,7 @@ axios.get('http://127.0.0.1:8000/api/listings/')
           console.log(error);
       });
 
-function Listings(props) {
+function Listings() {
   return (
     <div className="listings-page">
       <div className="listings">

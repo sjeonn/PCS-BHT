@@ -11,10 +11,10 @@ function Card(props) {
         target="_blank"
         rel="noopener noreferrer"
         >
-            <img src={listing.img ? listing.img : doggo} className="listing-image" alt="listing" />
+            <img src={listing.photo ? listing.photo : doggo} className="listing-image" alt="listing" />
         </a>
         <span className={"listing-data"}>
-            📍{listing.location} 🛏️{listing.bedrooms} Bedrooms 🚽{listing.bathrooms} Bathrooms 💸${listing.price}
+            📍{listing.address} 🛏️{listing.rooms} Bedrooms 🚽{listing.rooms} Bathrooms 💸${listing.price}
         </span>
       </div>
     );
