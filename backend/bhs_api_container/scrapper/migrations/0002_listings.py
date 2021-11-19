@@ -11,7 +11,7 @@ def create_data(apps, schema_editor):
                          filters={'zip_code': "94704", 'search_distance':"1", 'max_price': 1200, 'private_room': True})
                          
     for result in cl_h.get_results(sort_by='newest', geotagged=True):
-        Listing(link = "https://sfbay.craigslist.org/eby/roo/d/berkeley-lovely-private-sunny-very/7405635388.html", location = result['where'], email = "", bedrooms = 2, bathrooms = 3, price = result['price'], photo = "", registrationDate = result['last_updated'])
+        Listing(link = result['url'], location = result['where'], description = result['name'], email = "", bedrooms = 2, bathrooms = 3, price = result['price'], photo = "", registrationDate = result['last_updated'])
         
 
 class Migration(migrations.Migration):
