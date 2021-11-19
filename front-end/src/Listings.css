@@ -1,3 +1,7 @@
+.listings-page {
+    display: flex;
+}
+
 .listing-card {
     width: 600px;
     height: 400px;

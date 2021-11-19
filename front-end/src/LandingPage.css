@@ -4,3 +4,11 @@
     font-family: 'Helvetica';
 }
 
+.main a{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-decoration: none;
+    color: #000000;
+}
+

@@ -16,6 +16,11 @@
     animation-duration: 2s;
 }
 
+.title a{
+    text-decoration: none;
+    color: #000000;
+}
+
 .links{
     list-style: none;
 }
