@@ -14,12 +14,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Listing',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('address', models.CharField(max_length=250, verbose_name='Name')),
+                ('link', models.CharField(max_length=350)),
+                ('location', models.CharField(max_length=250, verbose_name='Name')),
+                ('description', models.TextField()),
                 ('email', models.EmailField(max_length=254)),
+                ('bedrooms', models.PositiveIntegerField()),
+                ('bathrooms',models.DecimalField(decimal_places=1, max_digits = 3)),
                 ('price', models.PositiveIntegerField()),
-                ('rooms', models.PositiveIntegerField()),
-                ('photo', models.CharField(max_length=300, verbose_name='Photo')),
+                ('photo',models.CharField("Photo",max_length=300)),
                 ('registrationDate', models.DateField(auto_now_add=True, verbose_name='Registration Date')),
             ],
         ),
