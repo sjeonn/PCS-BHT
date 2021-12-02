@@ -11,7 +11,7 @@ Users would be able to navigate between information/posts from different website
 Languages: Python, React
 
 ## Backend Server
-## Start Server 
+### Start Server 
 In bhs_api_container directory run `python manage.py runserver` to start server
 
 This should create the endpoint: `http://127.0.0.1:8000/api/listings/`
