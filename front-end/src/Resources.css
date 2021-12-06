@@ -1,0 +1,15 @@
+ul {
+    display: table;
+    margin: 0 auto;
+}
+  
+  a, a:focus{
+    outline: none
+  } 
+  a:link{
+    text-decoration: none;
+  }
+
+  .main li{
+      margin: 3vh 0;
+  }

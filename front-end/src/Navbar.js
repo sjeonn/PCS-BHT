@@ -10,7 +10,7 @@ function Navbar() {
             <nav class = "links">
                 <ul>
                     <li><a href = "listings"> Listings </a></li>
-                    <li><a href = "#"> Resources </a></li>
+                    <li><a href = "resources"> Resources </a></li>
                     <li><a href = "#"> About Us </a></li>
                 </ul>
             </nav>
