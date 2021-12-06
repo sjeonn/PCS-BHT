@@ -11,7 +11,7 @@ function Navbar() {
                 <ul>
                     <li><a href = "listings"> Listings </a></li>
                     <li><a href = "resources"> Resources </a></li>
-                    <li><a href = "#"> About Us </a></li>
+                    <li><a href = "aboutus"> About Us </a></li>
                 </ul>
             </nav>
         </header>
