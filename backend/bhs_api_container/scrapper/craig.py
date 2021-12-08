@@ -1,6 +1,6 @@
 from craigslist import CraigslistHousing
 import sys
-sys.path.append("~/../scrapper")
+# sys.path.append("./../scrapper")
 from models import Listing #this needs work 
 
 def get_listings():

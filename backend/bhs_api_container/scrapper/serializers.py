@@ -5,4 +5,4 @@ class ListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Listing
-        fields = ('pk', 'address', 'email', 'price', 'rooms', 'photo','registrationDate')
+        fields = ('pk', 'Name', 'email', 'price', 'rooms', 'photo','registrationDate')
