@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'scrapper'
+    'scrapper',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -85,6 +86,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#CRONJOB
+CRONJOBS = [
+    ('*/1 * * * *','scrapper.my_cron_job')
+]
 
 
 # Password validation
