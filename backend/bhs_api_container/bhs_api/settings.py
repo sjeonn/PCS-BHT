@@ -89,7 +89,7 @@ DATABASES = {
 
 #CRONJOB
 CRONJOBS = [
-    ('*/1 * * * *','scrapper.my_cron_job')
+    ('*/1 * * * *','scrapper.cron.my_cron_job')
 ]
 
 
