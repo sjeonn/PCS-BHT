@@ -10,9 +10,10 @@ from .serializers import *
 def listings_list(request):
     if request.method == 'GET':
         data = Listing.objects.all()
-
+        print("retrieved from database")
         serializer = ListingSerializer(data, context={'request': request}, many=True)
-
+        print("retrieved from serializer")
+        print("here" + serializer.data)
         return Response(serializer.data)
 
     elif request.method == 'POST':

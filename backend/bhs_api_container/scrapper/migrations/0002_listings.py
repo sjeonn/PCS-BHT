@@ -3,11 +3,11 @@ import sys
 from django.db import migrations
 import sys
 sys.path.append("../")
-from craig import get_listings
+from .. import craig
 
 def create_data(apps, schema_editor):
     Listing = apps.get_model('scrapper', 'Listing')
-    listings = get_listings()
+    listings = craig.get_listings()
     for lst in listings:
         lst.save()
 
