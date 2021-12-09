@@ -24,14 +24,15 @@ function listingFactory(numListings) {
     listing.link = listing1.link
     listing.photo = listing1.photo
     listing.address = listing1.address
-    listing.rooms = i
-    listing.price = 420
+    listing.bedrooms = i
+    listing.bathrooms = i
+    listing.price = i
     fakeListings.push(listing)
   }
   return fakeListings
 }
 
-const items = [
+/*const items = [
   { name: 'filter', label: 'Filter',
     items: [
     { name: 'bedrooms', label: 'Bedrooms' },
@@ -46,7 +47,7 @@ const items = [
       { name: 'cost', label: 'Cost' },
     ],
   },
-]
+]*/
 
 function Listings() {
   var [listings, setListings] = useState([])
@@ -87,7 +88,7 @@ function Listings() {
       <div className="sidebar">
         <h1 style = {{marginBlockStart:0}} >Search</h1>
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-        <Listings2 listings={listings}/>
+        <Listings2 listings={listingFactory(20)}/>
       </div>
     </div>
   );

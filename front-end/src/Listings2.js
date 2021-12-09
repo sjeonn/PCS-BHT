@@ -1,6 +1,34 @@
 import React, { Component } from "react";
 import Multiselect from "@khanacademy/react-multi-select";
 
+function filter(selected, listings) {
+  var res = listings;
+  if (selected.includes("price_ascending") && !selected.includes("price_descending")) {
+    res = res.sort((a, b) => a.price - b.price)
+  }
+  if (!selected.includes("price_ascending") && selected.includes("price_descending")) {
+    res = res.sort((a, b) => b.price - a.price)
+  }
+  if (selected.includes("northside") && !selected.includes("southside")) {
+    res = res.filter(e => e.address == "Northside")
+  }
+  if (!selected.includes("northside") && selected.includes("southside")) {
+    res = res.filter(e => e.address === "Southside")
+  }
+  if (selected.includes("bedrooms_ascending") && !selected.includes("bedrooms_descending")) {
+    res = res.sort((a, b) => a.bedrooms > b.bedrooms)
+  }
+  if (!selected.includes("bedrooms_ascending") && selected.includes("bedrooms_descending")) {
+    res = res.sort((a, b) => a.bedrooms < b.bedrooms)
+  }
+  if (selected.includes("bathrooms_ascending") && !selected.includes("bathrooms_descending")) {
+    res = res.sort((a, b) => a.bathrooms > b.bathrooms)
+  }
+  if (!selected.includes("bathrooms_ascending") && selected.includes("bathrooms_descending")) {
+    res = res.sort((a, b) => a.bathrooms < b.bathrooms)
+  }
+  return res
+}
 class App extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +37,7 @@ class App extends Component {
       isLoading: true,
       listings: [props.listings]
     };
+    console.log(props.listings)
   }
 
   componentDidMount() {
@@ -29,10 +58,10 @@ class App extends Component {
     { label: "Bathrooms (Ascending)", value: "bathrooms_ascending" },
     { label: "Bathrooms (Descending)", value: "bathrooms_descending" }
   ];
-// this.listings = {options.some(e => e.label === 'Price (Ascending)') ? 
-// this.listings.filter(person => person.age < 60) : this.listings}
+  
   handleSelectedChanged = selected => {
     this.setState({ selected });
+    console.log(selected, filter(selected, this.state.listings))
   };
 
   render() {
