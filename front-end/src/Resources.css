@@ -1,15 +1,26 @@
-ul {
+.main ul {
     display: table;
     margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
 }
-  
-  a, a:focus{
-    outline: none
-  } 
-  a:link{
-    text-decoration: none;
-  }
 
-  .main li{
-      margin: 3vh 0;
-  }
+.section {
+  margin-top: 2vh;
+}
+
+.section u {
+  font-size: 2vh;
+}
+
+.section li {
+  margin-top: 1vh;
+}
+
+.section a {
+  color: #636363;
+}
+
+.section a:hover{
+  color: black;
+}
