@@ -2,7 +2,8 @@ import Card from "./Card";
 import './Listings.css';
 import axios from 'axios';
 import SideBar from './SideBar';
-
+import Listings2 from './Listings2'
+import React, { useState } from "react";
 
 const listing1 = {
   "id" : 1,
@@ -46,14 +47,19 @@ axios.get('http://127.0.0.1:8000/api/listings/')
 function Listings() {
   return (
     <div className="listings-page">
-      <div className="listings">
+        <div className="listings">
+        {/* 
         {listings.map((listing) =>
           <ul key={listing.id}>
             <Card listing={listing}/>
           </ul>
         )}
-      </div>
-      <SideBar items={items} />
+        */
+        }
+
+        </div>
+      {/* <SideBar items={items} /> */}
+      <Listings2 listings={listings}/>
     </div>
   );
 }
