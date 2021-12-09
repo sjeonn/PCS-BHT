@@ -14,7 +14,7 @@ function Card(props) {
             <img src={listing.photo ? listing.photo : doggo} className="listing-image" alt="listing" />
         </a>
         <span className={"listing-data"}>
-            📍{listing.address} 🛏️{listing.rooms} Bedrooms 🚽{listing.rooms} Bathrooms 💸${listing.price}
+            📍{" " + listing.address} 🛏️{" " + listing.rooms} {listing.rooms == 1 ? "Bedroom" : "Bedrooms"}  🚽{" " + listing.rooms} {listing.rooms == 1 ? "Bathroom" : "Bathrooms"} 💸${listing.price}
         </span>
       </div>
     );

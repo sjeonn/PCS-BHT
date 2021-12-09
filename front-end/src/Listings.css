@@ -1,23 +1,31 @@
 .listings-page {
+    margin-top: 30px;
     display: flex;
+    justify-content: space-between;
 }
 
 .listing-card {
-    width: 600px;
-    height: 400px;
-    padding: 20px 20px 40px 20px;
+    width: 540px;
+    height: 380px;
+    padding: 20px;
     border-radius: 25px;
     border: 2px solid black;
-    text-align: center
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .listing-image {
-    max-width: 100%;
-    max-height: 100%;
+    width: 540px;
+    height: 360px;
     padding-bottom: 5px;
 }
 
 .listings {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.listings ul {
+    padding-left: 30px;
 }

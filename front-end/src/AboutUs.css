@@ -1,13 +1,13 @@
 
 
-img {
+.main img {
     height: 120px;
     width: auto;
     margin: 0;
     border: 0;
 }
 
-a img {
+.main a img {
     outline: none;
 }
 

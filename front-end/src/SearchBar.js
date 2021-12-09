@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './SearchBar.css'
 
-function SearchBar() {
- const [searchTerm, setSearchTerm] = React.useState("");
+function SearchBar({searchTerm, setSearchTerm}) {
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
@@ -11,7 +10,7 @@ function SearchBar() {
     <div class="search">
     <input
         type="text"
-        placeholder="Search"
+        placeholder="Search Locations"
         class = "searchTerm"
         value={searchTerm}
         onChange={handleChange}
