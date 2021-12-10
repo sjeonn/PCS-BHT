@@ -102,8 +102,8 @@ function Listings() {
   useEffect(async () => {
     const response = await axios.get('http://127.0.0.1:8000/api/listings/');
     console.log(response.data)
-    //setListings(response.data);
-    setListings(listingFactory(20))
+    setListings(response.data);
+    //setListings(listingFactory(20))
   }, []);
 
   return (
