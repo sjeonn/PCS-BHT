@@ -41,10 +41,10 @@ function filter(selected, listings) {
     res = res.sort((a, b) => b.price - a.price)
   }
   if (selected.includes("northside") && !selected.includes("southside")) {
-    res = res.filter(e => e.address == "Northside")
+    res = res.filter(e => e.address.includes("Northside"))
   }
   if (!selected.includes("northside") && selected.includes("southside")) {
-    res = res.filter(e => e.address === "Southside")
+    res = res.filter(e => e.address.includes("Southside"))
   }
   if (selected.includes("bedrooms_ascending") && !selected.includes("bedrooms_descending")) {
     res = res.sort((a, b) => a.rooms - b.rooms)
