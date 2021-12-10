@@ -2,7 +2,7 @@ import './Resources.css';
 
 function Resources() {
     return (
-        <div class = "main">
+        <div class = "resources">
             <h1>Housing Resources</h1>
             <ul>
                 <li class = "section"> <u>Berkeley Housing</u>

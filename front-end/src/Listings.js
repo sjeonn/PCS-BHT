@@ -32,6 +32,35 @@ function listingFactory(numListings) {
   return fakeListings
 }
 
+function filter(selected, listings) {
+  var res = listings;
+  if (selected.includes("price_ascending") && !selected.includes("price_descending")) {
+    res = res.sort((a, b) => a.price - b.price)
+  }
+  if (!selected.includes("price_ascending") && selected.includes("price_descending")) {
+    res = res.sort((a, b) => b.price - a.price)
+  }
+  if (selected.includes("northside") && !selected.includes("southside")) {
+    res = res.filter(e => e.address == "Northside")
+  }
+  if (!selected.includes("northside") && selected.includes("southside")) {
+    res = res.filter(e => e.address === "Southside")
+  }
+  if (selected.includes("bedrooms_ascending") && !selected.includes("bedrooms_descending")) {
+    res = res.sort((a, b) => a.rooms - b.rooms)
+  }
+  if (!selected.includes("bedrooms_ascending") && selected.includes("bedrooms_descending")) {
+    res = res.sort((a, b) => b.rooms - a.rooms)
+  }
+  if (selected.includes("bathrooms_ascending") && !selected.includes("bathrooms_descending")) {
+    res = res.sort((a, b) => a.rooms - b.rooms)
+  }
+  if (!selected.includes("bathrooms_ascending") && selected.includes("bathrooms_descending")) {
+    res = res.sort((a, b) => b.rooms - a.rooms)
+  }
+  return res
+}
+
 /*const items = [
   { name: 'filter', label: 'Filter',
     items: [
@@ -52,6 +81,7 @@ function listingFactory(numListings) {
 function Listings() {
   var [listings, setListings] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [selected, setSelected] = useState([])
 
   listings.forEach((listing, index) => {
     listing.id = index
@@ -66,6 +96,8 @@ function Listings() {
   listings = listings.filter(listing => {
     return compiledSearchExpression.test(listing.address)
   })
+
+  listings = filter(selected, listings)
 
   useEffect(async () => {
     const response = await axios.get('http://127.0.0.1:8000/api/listings/');
@@ -88,7 +120,7 @@ function Listings() {
       <div className="sidebar">
         <h1 style = {{marginBlockStart:0}} >Search</h1>
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-        <Listings2 listings={listingFactory(20)}/>
+        <Listings2 selected={selected} setSelected={setSelected}/>
       </div>
     </div>
   );
