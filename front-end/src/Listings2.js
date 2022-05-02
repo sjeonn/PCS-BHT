@@ -12,6 +12,8 @@ function Listings2({selected, setSelected}) {
     { label: "Price (Descending)", value: "price_descending" },
     { label: "Northside", value: "northside" },
     { label: "Southside", value: "southside" },
+    { label: "Westside", value: "westside" },
+    { label: "Downtown", value: "downtown" },
     { label: "Bedrooms (Ascending)", value: "bedrooms_ascending" },
     { label: "Bedrooms (Descending)", value: "bedrooms_descending" },
     { label: "Bathrooms (Ascending)", value: "bathrooms_ascending" },

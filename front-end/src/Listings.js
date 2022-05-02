@@ -40,11 +40,17 @@ function filter(selected, listings) {
   if (!selected.includes("price_ascending") && selected.includes("price_descending")) {
     res = res.sort((a, b) => b.price - a.price)
   }
-  if (selected.includes("northside") && !selected.includes("southside")) {
+  if (selected.includes("northside")) {
     res = res.filter(e => e.address.includes("Northside"))
   }
-  if (!selected.includes("northside") && selected.includes("southside")) {
+  if (selected.includes("southside")) {
     res = res.filter(e => e.address.includes("Southside"))
+  }
+  if (!selected.includes("westside")) {
+    res = res.filter(e => e.address.includes("Westside"))
+  }
+  if (!selected.includes("downtown")) {
+    res = res.filter(e => e.address.includes("Downtown"))
   }
   if (selected.includes("bedrooms_ascending") && !selected.includes("bedrooms_descending")) {
     res = res.sort((a, b) => a.rooms - b.rooms)

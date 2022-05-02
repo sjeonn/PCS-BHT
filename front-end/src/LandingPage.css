@@ -12,3 +12,14 @@
     color: #000000;
 }
 
+.button {
+    background-color: #ffffff;
+    color: #050000;
+    padding: 100px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    margin:10px;
+    width: 1000px;
+    height: 500px;
+}
