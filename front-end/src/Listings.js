@@ -5,7 +5,23 @@ import SideBar from './SideBar';
 import Listings2 from './Listings2'
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
+import SimpleImageSlider from "react-simple-image-slider";
+import listing1 from './listing1.jpg'
+import listing2 from './listing2.jpg'
+import listing3 from './listing3.jpg'
+const divStyle = {
+  width: '88%',
+  height: '700px',
+  /*backgroundImage: `url(${berkeley})`,
+  backgroundSize: 'cover'*/
+};
 
+const images = [
+  { url: listing1 },
+  { url: listing2 },
+  { url: listing3 },
+];
+/*
 const listing1 = {
   "id" : 1,
   "link" : "https://google.com",
@@ -14,7 +30,7 @@ const listing1 = {
   "bedrooms" : 6,
   "bathrooms" : 9,
   "price" : 420
-}
+}*/
 
 function listingFactory(numListings) {
   var fakeListings = []
@@ -113,15 +129,24 @@ function Listings() {
   }, []);
 
   return (
-    <div className="listings-page">
+    <div className="listings-page" >
         <div className="listings">
         {listings.map((listing) =>
           <ul key={listing.id}>
             <Card listing={listing}/>
           </ul>
         )}
-
         </div>
+        <div>
+      <SimpleImageSlider
+        width={1170}
+        height={650}
+        images={images}
+        showBullets={true}
+        showNavs={true}
+        autoPlay={true}
+      />
+    </div>
       {/* <SideBar items={items} /> */}
       <div className="sidebar">
         <h1 style = {{marginBlockStart:0}} >Search</h1>
