@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Multiselect from "@khanacademy/react-multi-select";
 
 
-
 function Listings2({selected, setSelected}) {
   const handleChange = newSelected => {
     setSelected(newSelected);
